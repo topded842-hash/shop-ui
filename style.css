@@ -10,32 +10,35 @@ body {
     overflow-x: hidden;
 }
 
+/* ГЛАВНАЯ НАДПИСЬ */
 .background-name {
     position: fixed;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 18vw;
     font-weight: 900;
-    letter-spacing: 20px;
-    opacity: 0.07;
+    letter-spacing: 22px;
     user-select: none;
+    opacity: 0.10;
+    z-index: -1;
 
-    background: linear-gradient(90deg, #00e5ff, #ff00de, #00e5ff);
+    background: linear-gradient(90deg, #ff4fd8, #00e5ff, #ff4fd8);
     background-size: 300% 300%;
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    animation: bgMove 10s linear infinite;
-    z-index: -1;
+    animation: move 8s linear infinite;
+    filter: drop-shadow(0 0 20px rgba(0,229,255,0.25));
 }
 
-@keyframes bgMove {
+@keyframes move {
     0% { background-position: 0% 50%; }
     100% { background-position: 100% 50%; }
 }
 
+/* СЕТКА */
 .container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -43,6 +46,7 @@ body {
     padding: 40px;
 }
 
+/* КАРТОЧКА */
 .card {
     background: rgba(20,20,20,0.55);
     border-radius: 22px;
@@ -62,9 +66,9 @@ body {
 
 .card:hover {
     transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 20px 40px rgba(0,229,255,0.12);
 }
 
+/* КАРТИНКИ */
 .card img {
     width: 100%;
     height: 250px;
@@ -89,14 +93,17 @@ body {
     margin-top: 8px;
 }
 
+/* КНОПКА */
 .btn {
     display: block;
     text-align: center;
     padding: 12px;
     margin-top: 10px;
-    background: linear-gradient(90deg, #00e5ff, #ff00de);
+
+    background: linear-gradient(90deg, #00e5ff, #ff4fd8);
     color: #fff;
     text-decoration: none;
+
     border-radius: 12px;
     transition: 0.3s;
 }
