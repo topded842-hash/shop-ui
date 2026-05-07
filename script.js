@@ -19,16 +19,24 @@ const products = [
 
 const catalog = document.getElementById("catalog");
 
-catalog.innerHTML = products.map(p => `
-<div class="card">
-    <img src="${p.img}" onerror="this.src='https://via.placeholder.com/500'">
-    <h3>${p.name}</h3>
-    <div>${p.flavor}</div>
-    <div class="category">${p.cat}</div>
-    <div class="price">${p.price} ₽</div>
-    <a class="btn" href="https://t.me/Shop_UI">ЗАКАЗАТЬ</a>
-</div>
-`).join("");
+catalog.innerHTML = products.map(p => {
+    const text = encodeURIComponent(
+        `Привет! Хочу купить ${p.cat} ${p.name}. Когда удобно продать заказ?`
+    );
+
+    const link = `https://t.me/Shop_UI?text=${text}`;
+
+    return `
+    <div class="card">
+        <img src="${p.img}" onerror="this.src='https://via.placeholder.com/500'">
+        <h3>${p.name}</h3>
+        <div>${p.flavor}</div>
+        <div class="category">${p.cat}</div>
+        <div class="price">${p.price} ₽</div>
+        <a class="btn" href="${link}" target="_blank">ЗАКАЗАТЬ</a>
+    </div>
+    `;
+}).join("");
 
 const cards = document.querySelectorAll(".card");
 
