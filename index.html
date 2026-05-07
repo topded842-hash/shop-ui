@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHOP UI | КАТАЛОГ</title>
+    <title>SHOP UI</title>
     <style>
         :root {
             --color-1: #ff00de; 
@@ -12,8 +12,7 @@
             --card-bg: rgba(20, 20, 20, 0.7); 
         }
         body {
-            margin: 0;
-            padding: 0;
+            margin: 0; padding: 0;
             background-color: var(--bg-dark);
             color: #fff;
             font-family: 'Segoe UI', Roboto, sans-serif;
@@ -54,13 +53,11 @@
             backdrop-filter: blur(10px);
             background: rgba(8, 8, 8, 0.8);
             position: sticky;
-            top: 0;
-            z-index: 10;
+            top: 0; z-index: 10;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
         header h1 {
-            font-size: 3rem;
-            margin: 0;
+            font-size: 3rem; margin: 0;
             text-transform: uppercase;
             letter-spacing: 8px;
             background: linear-gradient(to right, #fff, #aaa);
@@ -68,8 +65,7 @@
             -webkit-text-fill-color: transparent;
         }
         .container {
-            max-width: 1300px;
-            width: 95%;
+            max-width: 1300px; width: 95%;
             margin: 40px auto;
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -92,17 +88,14 @@
         .card:hover {
             transform: translateY(-12px);
             border-color: var(--color-2);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 229, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
         }
         .card img {
-            width: 100%;
-            height: 220px;
+            width: 100%; height: 220px;
             object-fit: contain;
             margin-bottom: 15px;
             filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));
-            transition: 0.3s;
         }
-        .card:hover img { transform: scale(1.05); }
         .category-tag {
             position: absolute;
             top: 15px; right: 15px;
@@ -110,56 +103,52 @@
             background: rgba(255, 255, 255, 0.1);
             padding: 4px 10px;
             border-radius: 8px;
-            text-transform: uppercase;
             color: var(--color-2);
-        }
-        .card h3 { margin: 10px 0 5px; font-size: 1.1rem; font-weight: 600; min-height: 2.4em; }
-        .flavor-tag { font-size: 0.9rem; color: #999; margin-bottom: 20px; min-height: 3em; display: block; }
-        .price { font-size: 1.8rem; color: #fff; font-weight: 900; margin-bottom: 20px; font-family: 'Monaco', monospace; }
-        .buy-btn {
-            display: block;
-            padding: 16px;
-            background: #fff;
-            color: #000;
-            text-decoration: none;
-            border-radius: 18px;
-            font-weight: 800;
             text-transform: uppercase;
-            font-size: 0.9rem;
+        }
+        .card h3 { margin: 10px 0 5px; font-size: 1.1rem; min-height: 2.4em; }
+        .flavor-tag { font-size: 0.9rem; color: #999; margin-bottom: 20px; min-height: 3em; display: block; }
+        .price { font-size: 1.8rem; color: #fff; font-weight: 900; margin-bottom: 20px; }
+        .buy-btn {
+            display: block; padding: 16px;
+            background: #fff; color: #000;
+            text-decoration: none; border-radius: 18px;
+            font-weight: 800; text-transform: uppercase;
             transition: 0.3s;
         }
-        .buy-btn:hover { background: var(--color-2); box-shadow: 0 0 20px rgba(0, 229, 255, 0.6); }
+        .buy-btn:hover { background: var(--color-2); }
         footer { padding: 50px; color: #444; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; }
     </style>
 </head>
 <body>
     <div class="background-name">SHOP<br>UI</div>
-    <header>
-        <h1>SHOP UI</h1>
-    </header>
-
+    <header><h1>SHOP UI</h1></header>
     <div class="container" id="catalog"></div>
-
     <footer>&copy; 2024 SHOP UI. ALL RIGHTS RESERVED.</footer>
 
     <script>
-        // Функция отрисовки, которая запустится ТОЛЬКО когда страница готова
         window.onload = function() {
             const products = [
-                { name: "Hyppe 50000", flavor: "Киви Дыня", price: "1550", cat: "Одноразки", img: "1.png" },
-                { name: "Wild 28000", flavor: "Клубника Банан", price: "1250", cat: "Одноразки", img: "2.png" },
+                { name: "Hyppe 50000", flavor: "Киви Дыня", price: "1550", cat: "Disposable", img: "1.png" },
+                { name: "Wild 28000", flavor: "Клубника Банан", price: "1250", cat: "Disposable", img: "2.png" },
                 { name: "Glitch Pouches", flavor: "Бабл гам (150 мг)", price: "450", cat: "Snus", img: "3.png" },
-                { name: "Isterika Монашка", flavor: "Белый персик", price: "450", cat: "Снюс", img: "4.png" },
-                { name: "Подонки Critical", flavor: "Апельсиновый драже", price: "450", cat: "Жижи", img: "5.png" },
-                { name: "Подонки Isterika", flavor: "Экзотический сок", price: "450", cat: "Жижи", img: "6.png" },
-                { name: "Monster Liquid", flavor: "Маракуя Киви", price: "450", cat: "Жижи", img: "7.png" },
-                { name: "Грех Light", flavor: "Ягодный коктейль", price: "450", cat: "Жижи", img: "8.png" },
-                { name: "Анархия V2", flavor: "Вафли и крем", price: "500", cat: "Жижи", img: "9.png" }
+                { name: "Isterika Монашка", flavor: "Белый персик (201 мг)", price: "450", cat: "Snus", img: "4.png" },
+                { name: "Подонки Critical", flavor: "Апельсиновый драже", price: "450", cat: "Liquids", img: "5.png" },
+                { name: "Подонки Critical", flavor: "Бабл гам", price: "450", cat: "Liquids", img: "5.png" },
+                { name: "Подонки Isterika", flavor: "Экзотический сок", price: "450", cat: "Liquids", img: "6.png" },
+                { name: "Monster Liquid", flavor: "Маракуя Киви", price: "450", cat: "Liquids", img: "7.png" },
+                { name: "Monster Liquid", flavor: "Лимонад Ситро", price: "450", cat: "Liquids", img: "7.png" },
+                { name: "Грех Light", flavor: "Темный ягодный коктейль", price: "450", cat: "Liquids", img: "8.png" },
+                { name: "Грех Light", flavor: "Чернично-малиновый дуэт", price: "450", cat: "Liquids", img: "8.png" },
+                { name: "Грех Light", flavor: "Взрывная малина персик", price: "450", cat: "Liquids", img: "8.png" },
+                { name: "Грех Light", flavor: "Вишнево-малиновый овердрайв", price: "450", cat: "Liquids", img: "8.png" },
+                { name: "Анархия V2", flavor: "Вафли, банановый крем, клубника", price: "500", cat: "Liquids", img: "9.png" },
+                { name: "Анархия V2", flavor: "Ванильно-творожный сырочек", price: "500", cat: "Liquids", img: "9.png" },
+                { name: "Анархия V2", flavor: "Чизкейк, апельсин, баварский крем", price: "500", cat: "Liquids", img: "9.png" }
             ];
 
             const catalog = document.getElementById('catalog');
             let html = '';
-
             products.forEach(item => {
                 html += 
                     <div class="card">
