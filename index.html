@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHOP UI | Твой магазин</title>
+    <title>SHOP UI | КАТАЛОГ</title>
     <style>
         :root {
             --color-1: #ff00de; 
             --color-2: #00e5ff; 
             --bg-dark: #080808; 
-            --card-bg: rgba(20, 20, 20, 0.8); 
+            --card-bg: rgba(20, 20, 20, 0.7); 
         }
         body {
             margin: 0;
             padding: 0;
             background-color: var(--bg-dark);
             color: #fff;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Segoe UI', Roboto, sans-serif;
             overflow-x: hidden;
             display: flex;
             flex-direction: column;
@@ -33,7 +33,7 @@
             text-transform: uppercase;
             letter-spacing: 15px;
             text-align: center;
-            line-height: 1;
+            line-height: 0.8;
             user-select: none;
             background: linear-gradient(45deg, var(--color-1), var(--color-2), var(--color-1));
             background-size: 400% 400%;
@@ -41,7 +41,7 @@
             background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: gradientShift 8s ease infinite;
-            filter: drop-shadow(0 0 20px rgba(255, 0, 222, 0.3));
+            filter: blur(2px) opacity(0.3);
         }
         @keyframes gradientShift {
             0% { background-position: 0% 50%; }
@@ -52,108 +52,103 @@
             width: 100%;
             padding: 40px 0;
             text-align: center;
-            backdrop-filter: blur(5px);
-            background: rgba(8, 8, 8, 0.5);
+            backdrop-filter: blur(10px);
+            background: rgba(8, 8, 8, 0.8);
             position: sticky;
             top: 0;
             z-index: 10;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
         header h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin: 0;
             text-transform: uppercase;
-            letter-spacing: 5px;
-            color: #fff;
-        }
-        header p {
-            font-size: 1rem;
-            color: #aaa;
-            margin-top: 5px;
+            letter-spacing: 8px;
+            background: linear-gradient(to right, #fff, #aaa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         .container {
-            max-width: 1200px;
-            width: 90%;
+            max-width: 1300px;
+            width: 95%;
             margin: 40px auto;
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
+            gap: 25px;
             z-index: 5;
-        }
-        /* Стиль для сообщения о пустом складе */
-        .sold-out-msg {
-            grid-column: 1 / -1;
-            text-align: center;
-            background: var(--card-bg);
-            padding: 50px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-        }
-        .sold-out-msg h2 {
-            font-size: 2rem;
-            background: linear-gradient(45deg, var(--color-1), var(--color-2));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 15px;
-        }
-        .sold-out-msg p {
-            font-size: 1.2rem;
-            color: #ccc;
         }
         .card {
             background: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 25px;
-            backdrop-filter: blur(10px);
-            transition: all 0.4s ease;
-            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 24px;
+            padding: 20px;
+            backdrop-filter: blur(15px);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
         }
         .card:hover {
-            transform: translateY(-10px) scale(1.02);
-            border-color: rgba(0, 229, 255, 0.3);
-            box-shadow: 0 15px 40px rgba(0, 229, 255, 0.15);
+            transform: translateY(-12px);
+            border-color: var(--color-2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 229, 255, 0.1);
         }
         .card img {
             width: 100%;
             height: 200px;
             object-fit: contain;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.5));
+        }
+        .category-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 0.7rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 4px 10px;
+            border-radius: 8px;
+            text-transform: uppercase;
+            color: #00e5ff;
         }
         .card h3 {
             margin: 10px 0 5px;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
+            min-height: 2.4em;
         }
         .flavor-tag {
-            font-size: 0.95rem;
-            color: #bbb;
+            font-size: 0.9rem;
+            color: #999;
             margin-bottom: 15px;
+            min-height: 2.5em;
             display: block;
         }
         .price {
-            font-size: 1.7rem;
+            font-size: 1.6rem;
             color: #fff;
-            font-weight: 800;
-            margin: 15px 0;
-            text-shadow: 0 0 10px rgba(255, 0, 222, 0.5);
+            font-weight: 900;
+            margin-bottom: 20px;
         }
         .buy-btn {
             display: block;
-            padding: 15px;
-            background: linear-gradient(45deg, var(--color-1), var(--color-2));
-            color: #fff;
+            padding: 14px;
+            background: #fff;
+            color: #000;
             text-decoration: none;
             border-radius: 15px;
-            font-weight: bold;
-            text-transform: uppercase;
-            transition: 0.3s ease;
+            font-weight: 800;
+            transition: 0.3s;
         }
         .buy-btn:hover {
-            box-shadow: 0 5px 25px rgba(255, 0, 222, 0.4);
-            transform: translateY(-2px);
+            background: var(--color-2);
+        }
+        footer {
+            padding: 40px;
+            color: #444;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
         }
     </style>
 </head>
@@ -161,45 +156,47 @@
     <div class="background-name">SHOP<br>UI</div>
     <header>
         <h1>SHOP UI</h1>
-        <p>Premium Liquids & Devices</p>
     </header>
+
     <div class="container" id="catalog"></div>
 
+    <footer>&copy; 2024 SHOP UI. ALL RIGHTS RESERVED.</footer>
+
     <script>
-        // Когда всё раскупили — просто оставь массив пустым: []
-        // Как только будет завоз — добавь объекты с товарами обратно.
-        const products = [];
+        const products = [
+            { name: "Hyppe 50000", flavor: "Киви Дыня", price: "1550", cat: "Disposable", img: "1.png" },
+            { name: "Wild 28000", flavor: "Клубника Банан", price: "1250", cat: "Disposable", img: "2.png" },
+            { name: "Glitch Pouches", flavor: "Бабл гам (150 мг)", price: "450", cat: "Snus", img: "3.png" },
+            { name: "Isterika Монашка", flavor: "Белый персик (201 мг)", price: "450", cat: "Snus", img: "4.png" },
+            { name: "Подонки Critical", flavor: "Апельсиновый драже", price: "450", cat: "Liquids", img: "5.png" },
+            { name: "Подонки Critical", flavor: "Бабл гам", price: "450", cat: "Liquids", img: "5.png" },
+            { name: "Подонки Isterika", flavor: "Экзотический сок", price: "450", cat: "Liquids", img: "6.png" },
+            { name: "Monster Liquid", flavor: "Маракуя Киви", price: "450", cat: "Liquids", img: "7.png" },
+            { name: "Monster Liquid", flavor: "Лимонад Ситро", price: "450", cat: "Liquids", img: "7.png" },
+            { name: "Грех Light", flavor: "Темный ягодный коктейль", price: "450", cat: "Liquids", img: "8.png" },
+            { name: "Грех Light", flavor: "Чернично-малиновый дуэт", price: "450", cat: "Liquids", img: "8.png" },
+            { name: "Грех Light", flavor: "Взрывная малина персик", price: "450", cat: "Liquids", img: "8.png" },
+            { name: "Грех Light", flavor: "Вишнево-малиновый овердрайв", price: "450", cat: "Liquids", img: "8.png" },
+            { name: "Анархия V2", flavor: "Вафли, банановый крем, клубника", price: "500", cat: "Liquids", img: "9.png" },
+            { name: "Анархия V2", flavor: "Ванильно-творожный сырочек", price: "500", cat: "Liquids", img: "9.png" },
+            { name: "Анархия V2", flavor: "Чизкейк, апельсин, баварский крем", price: "500", cat: "Liquids", img: "9.png" }
+        ];
 
         const catalog = document.getElementById('catalog');
 
-        if (products.length === 0) {
-            // Если товаров нет — выводим это сообщение
-            catalog.innerHTML = `
-                <div class="sold-out-msg">
-                    <h2>ВСЕ ТОВАРЫ РАСПРОДАНЫ!</h2>
-                    <p>Следите за новостями в канале и ждите нового завоза.</p>
-                    <br>
-                    <a href="https://t.me/Shop_UI" class="buy-btn" style="display: inline-block; padding: 15px 40px;">ПЕРЕЙТИ В КАНАЛ</a>
+        // Вот тут была ошибка в кавычках. Исправлено.
+        products.forEach(item => {
+            catalog.innerHTML += 
+                <div class="card">
+                    <span class="category-tag">${item.cat}</span>
+                    <img src="${item.img}" alt="${item.name}" onerror="this.src='https://via.placeholder.com/200?text=NO+IMAGE'">
+                    <h3>${item.name}</h3>
+                    <span class="flavor-tag">${item.flavor}</span>
+                    <div class="price">${item.price} ₽</div>
+                    <a href="https://t.me/Shop_UI" class="buy-btn">ЗАКАЗАТЬ</a>
                 </div>
-            `;
-        } else {
-            // Если товары есть — отрисовываем их
-            products.forEach(item => {
-                catalog.innerHTML += `
-                    <div class="card">
-                        <div class="card-top">
-                            <img src="${item.img}" alt="${item.name}">
-                            <h3>${item.name}</h3>
-                            <span class="flavor-tag">${item.flavor}</span>
-                        </div>
-                        <div class="card-bottom">
-                            <div class="price">${item.price} ₽</div>
-                            <a href="https://t.me/Shop_UI" class="buy-btn">КУПИТЬ</a>
-                        </div>
-                    </div>
-                `;
-            });
-        }
+            ;
+        });
     </script>
 </body>
 </html>
