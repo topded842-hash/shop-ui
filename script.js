@@ -8,7 +8,6 @@ const products = [
     { name: "Подонки Isterika", flavor: "Экзотический сок", price: "450", cat: "Жижа", img: "6.png" },
     { name: "Monster Liquid", flavor: "Маракуя Киви", price: "450", cat: "Жижа", img: "7.png" },
     { name: "Monster Liquid", flavor: "Лимонад Ситро", price: "450", cat: "Жижа", img: "7.png" },
-    { name: "Грех Light", flavor: "Темный ягодный коктейль", price: "450", cat: "Жижа", img: "8.png" },
     { name: "Грех Light", flavor: "Чернично-малиновый дуэт", price: "450", cat: "Жижа", img: "8.png" },
     { name: "Грех Light", flavor: "Взрывная малина персик", price: "450", cat: "Жижа", img: "8.png" },
     { name: "Грех Light", flavor: "Вишнево-малиновый овердрайв", price: "450", cat: "Жижа", img: "8.png" },
