@@ -237,7 +237,7 @@ header::after {
 
 .tg-btn svg, .tg-btn span { position: relative; z-index: 1; }
 
-.tg-icon { width: 18px; height: 18px; flex-shrink: 0; }
+.tg-icon { width: 18px; height: 18px; flex-shrink: 0; display: block; }
 
 @media (max-width: 520px) {
   header { padding: 0 16px; }
