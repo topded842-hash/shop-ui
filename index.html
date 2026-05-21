@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHOP UI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Фоновый текст -->
+<div class="background-name">SHOP UI</div>
+
+<!-- Шапка -->
+<header class="header">
+  <div class="header-inner">
+    <div class="logo">
+      <span class="logo-text">SHOP</span>
+      <span class="logo-accent">UI</span>
+    </div>
+    <div class="header-right">
+      <div class="search-wrap">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input class="search-input" id="searchInput" type="text" placeholder="Поиск товара...">
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Фильтры -->
+<div class="filters-wrap">
+  <div class="filters">
+    <button class="filter-btn active" data-cat="all">Все</button>
+    <button class="filter-btn" data-cat="Одноразка">
+      <span class="filter-dot dot-blue"></span>Одноразки
+    </button>
+    <button class="filter-btn" data-cat="Снюс">
+      <span class="filter-dot dot-pink"></span>Снюс
+    </button>
+    <button class="filter-btn" data-cat="Жижа">
+      <span class="filter-dot dot-cyan"></span>Жижа
+    </button>
+  </div>
+  <div class="count-label" id="countLabel">15 товаров</div>
+</div>
+
+<!-- Каталог -->
+<div class="container" id="catalog"></div>
+
+<!-- Пустой результат -->
+<div class="empty-state" id="emptyState">
+  <div class="empty-icon">🔍</div>
+  <div class="empty-text">Ничего не найдено</div>
+  <div class="empty-sub">Попробуй другой запрос или категорию</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
