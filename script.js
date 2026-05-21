@@ -175,7 +175,8 @@ document.querySelectorAll(".filter-btn").forEach(btn => {
 });
 
 // Search input
-document.getElementById("searchInput").addEventListener("input", e => {
+document.getElementById("searchInput").addEventListener("input", e => { 
     searchQuery = e.target.value.toLowerCase();
     updateView();
 });
+updateView();
