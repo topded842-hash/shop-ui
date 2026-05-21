@@ -151,7 +151,7 @@ function updateView() {
     });
 
     // Update count
-    const total = products.length;
+    const total = document.querySelectorAll(".card").length;
     countLabel.textContent = visible === total
         ? `${total} товаров`
         : `${visible} из ${total}`;
