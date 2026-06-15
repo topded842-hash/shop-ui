@@ -1,10 +1,8 @@
 const products = [
-    { name: "Hyppe 50000",       flavor: "Киви Дыня",                             price: "1550", cat: "Одноразка", img: "1.png" },
     { name: "Glitch Pouches",    flavor: "Бабл гам (150 мг)",                      price: "450",  cat: "Снюс",     img: "3.png" },
     { name: "Isterika Монашка",  flavor: "Белый персик (201 мг)",                  price: "450",  cat: "Снюс",     img: "4.png" },
     { name: "Подонки Critical",  flavor: "Бабл гам",                               price: "450",  cat: "Жижа",     img: "5.png" },
     { name: "Анархия V2",        flavor: "Вафли, банановый крем, клубника",        price: "500",  cat: "Жижа",     img: "9.png" },
-    { name: "Анархия V2",        flavor: "Ванильно-творожный сырочек",             price: "500",  cat: "Жижа",     img: "9.png" },
     { name: "Анархия V2",        flavor: "Чизкейк, апельсин, баварский крем",      price: "500",  cat: "Жижа",     img: "9.png" }
 ];
 // ─── STEAM ───
