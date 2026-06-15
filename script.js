@@ -35,7 +35,7 @@ function badgeClass(cat) {
 // ─── Build card HTML ───
 function buildCard(p) {
     const text = encodeURIComponent(`Привет! Хочу купить ${p.cat} ${p.name}. Когда удобно продать заказ?`);
-    const link = `https://t.me/Shop_UI?text=${text}`;
+    const link = `https://t.me/Steam_UI?text=${text}`;
     return `
     <div class="card" data-cat="${p.cat}" data-name="${p.name.toLowerCase()}" data-flavor="${p.flavor.toLowerCase()}">
         <div class="card-img-wrap">
