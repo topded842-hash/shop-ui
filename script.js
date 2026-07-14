@@ -39,7 +39,7 @@ const tgIcon = `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37
 
 // ─── Badge class helper ───
 function badgeClass(cat) {
-    if (cat === "Одноразка") return "cat-one";
+    if (cat === "Одноразки") return "cat-one";
     if (cat === "Снюс")     return "cat-snus";
     return "cat-liq";
 }
