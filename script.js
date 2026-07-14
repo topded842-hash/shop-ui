@@ -16,7 +16,7 @@ const products = [
     { name: "Podonki Critical",        flavor: "Дыня кокос",        price: "450",  cat: "Жижа",     img: "80.png" },
     { name: "YOOZ 25000",        flavor: "Манго персик",        price: "2000",  cat: "Одноразки",     img: "20.png" },
     { name: "KORI",        flavor: "Персик лёд",        price: "5500",  cat: "Одноразки",     img: "10.png" },
-]
+];
 // ─── STEAM ───
 function createSteam() {
   const p = document.createElement("div");
