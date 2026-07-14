@@ -1,10 +1,22 @@
 const products = [
     { name: "Glitch Pouches",    flavor: "Бабл гам (150 мг)",                      price: "450",  cat: "Снюс",     img: "3.png" },
     { name: "Isterika Монашка",  flavor: "Белый персик (201 мг)",                  price: "450",  cat: "Снюс",     img: "4.png" },
-    { name: "Подонки Critical",  flavor: "Бабл гам",                               price: "450",  cat: "Жижа",     img: "5.png" },
-    { name: "Анархия V2",        flavor: "Вафли, банановый крем, клубника",        price: "500",  cat: "Жижа",     img: "9.png" },
-    { name: "Анархия V2",        flavor: "Чизкейк, апельсин, баварский крем",      price: "500",  cat: "Жижа",     img: "9.png" }
-];
+    { name: "Анархия V2",        flavor: "банан X ананас",        price: "450",  cat: "Жижа",     img: "30.png" },
+    { name: "Анархия V2",        flavor: "цитрусовый энергетик",        price: "450",  cat: "Жижа",     img: "30.png" },
+    { name: "D.L.T.A",        flavor: "Adrenaline RUSH Pepsi",        price: "450",  cat: "Жижа",     img: "40.png" },
+    { name: "D.L.T.A",        flavor: "Monster Energy",        price: "450",  cat: "Жижа",     img: "40.png" },
+    { name: "D.L.T.A",        flavor: "BURN Energy",        price: "450",  cat: "Жижа",     img: "40.png" },
+    { name: "Podonki LAST HAPKA",        flavor: "Скитлз и смородина",        price: "450",  cat: "Жижа",     img: "50.png" },
+    { name: "Podonki LAST HAPKA",        flavor: "микс ягод лёд",        price: "450",  cat: "Жижа",     img: "50.png" },
+    { name: "Podonki LAST HAPKA",        flavor: "Кола сода лёд",        price: "450",  cat: "Жижа",     img: "50.png" },
+    { name: "Рик и морти НА ЗАМЕРЗОНЕ",        flavor: "черничная фанта",        price: "500",  cat: "Жижа",     img: "60.png" },
+    { name: "Рик и морти НА ЗАМЕРЗОНЕ",        flavor: "Лесной корнвелиус",        price: "500",  cat: "Жижа",     img: "60.png" },
+    { name: "Podonki Critical",        flavor: "Лимонные червяки",        price: "450",  cat: "Жижа",     img: "80.png" },
+    { name: "Podonki Critical",        flavor: "Кислый киви",        price: "450",  cat: "Жижа",     img: "80.png" },
+    { name: "Podonki Critical",        flavor: "Дыня кокос",        price: "450",  cat: "Жижа",     img: "80.png" },
+    { name: "YOOZ 25000",        flavor: "Манго персик",        price: "2000",  cat: "Одноразки",     img: "20.png" },
+    { name: "KORI",        flavor: "Персик лёд",        price: "5500",  cat: "Одноразки",     img: "10.png" },
+    
 // ─── STEAM ───
 function createSteam() {
   const p = document.createElement("div");
